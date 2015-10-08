@@ -5,7 +5,9 @@
             <action method="unsetChild">
                 <alias>catalog.topnav</alias>
             </action>
-            <block name="bennoislost.easy-navigation.renderer" type="bennoislost_easynavigation/catalog_product_navigation_renderer" as="bennoislost.easy-nav" template="bennoislost/easy-navigation/root.phtml"/>
+            <block name="bennoislost.easy-navigation.renderer" type="bennoislost_easynavigation/catalog_product_navigation_renderer" as="bennoislost.easy-nav" template="bennoislost/easy-navigation/root.phtml">
+                <block name="bennoislost.easy-navigation.template.selector" type="bennoislost_easynavigation/catalog_product_navigation_template_selector" as="template-selector"/>
+            </block>
         </reference>
     </default>
 </layout>
