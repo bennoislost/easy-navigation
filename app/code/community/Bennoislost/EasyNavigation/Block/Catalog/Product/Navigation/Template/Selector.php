@@ -30,6 +30,9 @@ class Bennoislost_EasyNavigation_Block_Catalog_Product_Navigation_Template_Selec
         return $this->_determineTemplateFile();
     }
 
+    /**
+     * @return string
+     */
     protected function _determineTemplateFile()
     {
         if ($this->_isLeafNode()) {
