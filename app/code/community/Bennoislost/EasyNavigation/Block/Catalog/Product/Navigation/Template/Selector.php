@@ -3,28 +3,28 @@
 class Bennoislost_EasyNavigation_Block_Catalog_Product_Navigation_Template_Selector
     extends Mage_Core_Block_Abstract
 {
-    /** @var $_menuTree Varien_Data_Tree_Node_Collection */
+    /** @var $_menuTree Varien_Data_Tree_Node */
     private $_menuTree;
 
-    /** @var $_children Varien_Data_Tree_Node_Collection */
-    private $_children;
+    /** @var $_menuChildren Varien_Data_Tree_Node_Collection */
+    private $_menuChildren;
 
     private $_depth;
 
     /**
-     * @param $menuTree Varien_Data_Tree_Node_Collection
+     * @param $menuTree Varien_Data_Tree_Node
      * @param $children Varien_Data_Tree_Node_Collection
      * @param $depth    Int
      *
      * @return string
      */
     public function getTemplatePath(
-        Varien_Data_Tree_Node_Collection $menuTree,
+        Varien_Data_Tree_Node $menuTree,
         Varien_Data_Tree_Node_Collection $children,
         $depth
     ) {
         $this->_menuTree = $menuTree;
-        $this->_children = $children;
+        $this->_menuChildren = $children;
         $this->_depth = $depth;
 
         return $this->_determineTemplateFile();
@@ -83,7 +83,7 @@ class Bennoislost_EasyNavigation_Block_Catalog_Product_Navigation_Template_Selec
      */
     private function _isParentWithChildren()
     {
-        return ($this->_depth === 1 && $this->_children->count());
+        return ($this->_depth === 1 && $this->_menuChildren->count());
     }
 
     /**
@@ -91,7 +91,7 @@ class Bennoislost_EasyNavigation_Block_Catalog_Product_Navigation_Template_Selec
      */
     private function _isParentWithoutChildren()
     {
-        return ($this->_depth === 1 && (!$this->_children->count()));
+        return ($this->_depth === 1 && (!$this->_menuChildren->count()));
     }
 
     /**
@@ -99,7 +99,7 @@ class Bennoislost_EasyNavigation_Block_Catalog_Product_Navigation_Template_Selec
      */
     private function _isChildWithChildren()
     {
-        return $this->_depth > 1 && $this->_children->count();
+        return $this->_depth > 1 && $this->_menuChildren->count();
     }
 
     /**
@@ -107,6 +107,6 @@ class Bennoislost_EasyNavigation_Block_Catalog_Product_Navigation_Template_Selec
      */
     private function _isChildWithoutChildren()
     {
-        return $this->_depth > 1 && (!$this->_children->count());
+        return $this->_depth > 1 && (!$this->_menuChildren->count());
     }
 }
