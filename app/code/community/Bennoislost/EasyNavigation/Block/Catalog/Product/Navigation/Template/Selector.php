@@ -40,6 +40,10 @@ class Bennoislost_EasyNavigation_Block_Catalog_Product_Navigation_Template_Selec
             return 'ROOT CATEGORY';
         }
 
+        if ($this->_isParentWithChildren()) {
+            return 'PARENT WITH CHILDREN';
+        }
+
         return '';
     }
 
@@ -58,4 +62,13 @@ class Bennoislost_EasyNavigation_Block_Catalog_Product_Navigation_Template_Selec
     {
         return $this->_menuTree->getIdField() === 'root' ? true : false;
     }
+
+    /**
+     * @return bool
+     */
+    private function _isParentWithChildren()
+    {
+        return ($this->_depth === 1 && $this->_children->count());
+    }
+
 }
