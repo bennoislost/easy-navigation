@@ -1,0 +1,37 @@
+<?php
+
+class Bennoislost_EasyNavigation_Block_Catalog_Product_Navigation_Template_Selector
+    extends Mage_Core_Block_Abstract
+{
+    /** @var $_menuTree Varien_Data_Tree_Node_Collection */
+    private $_menuTree;
+
+    /** @var $_children Varien_Data_Tree_Node_Collection */
+    private $_children;
+
+    private $_depth;
+
+    /**
+     * @param $menuTree Varien_Data_Tree_Node_Collection
+     * @param $children Varien_Data_Tree_Node_Collection
+     * @param $depth    Int
+     *
+     * @return string
+     */
+    public function getTemplatePath(
+        Varien_Data_Tree_Node_Collection $menuTree,
+        Varien_Data_Tree_Node_Collection $children,
+        $depth
+    ) {
+        $this->_menuTree = $menuTree;
+        $this->_children = $children;
+        $this->_depth = $depth;
+
+        return $this->_determineTemplateFile();
+    }
+
+    protected function _determineTemplateFile()
+    {
+        return "template file";
+    }
+}
