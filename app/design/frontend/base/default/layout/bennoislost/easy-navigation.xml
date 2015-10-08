@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<layout>
+    <default>
+        <reference name="top.menu">
+            <action method="unsetChild">
+                <alias>catalog.topnav</alias>
+            </action>
+            <block name="bennoislost.easy-navigation.renderer" type="bennoislost_easynavigation/catalog_product_navigation_renderer" as="bennoislost.easy-nav" template="bennoislost/easy-navigation/root.phtml"/>
+        </reference>
+    </default>
+</layout>

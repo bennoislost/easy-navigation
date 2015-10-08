@@ -1,0 +1,11 @@
+# Bennoislost - Easy Navigation
+
+# Module Code
+app/code/community/Bennoislost/EasyNavigation    app/code/community/Bennoislost/EasyNavigation
+
+# Module Initializer
+app/etc/modules/Bennoislost_EasyNavigation.xml    app/etc/modules/Bennoislost_EasyNavigation.xml
+
+# Design Files
+app/design/frontend/base/default/layout/bennoislost/easy-navigation.xml    app/design/frontend/base/default/layout/bennoislost/easy-navigation.xml
+app/design/frontend/base/default/template/bennoislost/easy-navigation    app/design/frontend/base/default/template/bennoislost/easy-navigation

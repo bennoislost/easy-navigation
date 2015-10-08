@@ -1,0 +1,9 @@
+<?php /** @var Bennoislost_EasyNavigation_Block_Catalog_Product_Navigation_Renderer $this */ ?>
+<?php $_menu = $this->getHtml('level-top') ?>
+<?php if ($_menu): ?>
+    <nav id="nav">
+        <ol class="nav-primary">
+            <?php echo $_menu; ?>
+        </ol>
+    </nav>
+<?php endif; ?>

@@ -1,0 +1,14 @@
+{
+    "name": "bennoislost/easy-navigation",
+    "type": "magento-module",
+    "description": "A simple module to customize your navigation menu",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ben McManus",
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

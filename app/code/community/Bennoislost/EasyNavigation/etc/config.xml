@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Bennoislost_EasyNavigation>
+            <version>0.0.1</version>
+        </Bennoislost_EasyNavigation>
+    </modules>
+    <global>
+        <blocks>
+            <bennoislost_easynavigation>
+                <class>Bennoislost_EasyNavigation_Block</class>
+            </bennoislost_easynavigation>
+        </blocks>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <bennoislost_easynavigation>
+                    <file>bennoislost/easy-navigation.xml</file>
+                </bennoislost_easynavigation>
+            </updates>
+        </layout>
+    </frontend>
+</config>
