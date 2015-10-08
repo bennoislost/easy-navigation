@@ -36,6 +36,10 @@ class Bennoislost_EasyNavigation_Block_Catalog_Product_Navigation_Template_Selec
             return 'LEAF NODE';
         }
 
+        if ($this->_isRootCategory()) {
+            return 'ROOT CATEGORY';
+        }
+
         return '';
     }
 
@@ -45,5 +49,13 @@ class Bennoislost_EasyNavigation_Block_Catalog_Product_Navigation_Template_Selec
     private function _isLeafNode()
     {
         return $this->_depth > 2;
+    }
+
+    /**
+     * @return bool
+     */
+    private function _isRootCategory()
+    {
+        return $this->_menuTree->getIdField() === 'root' ? true : false;
     }
 }
