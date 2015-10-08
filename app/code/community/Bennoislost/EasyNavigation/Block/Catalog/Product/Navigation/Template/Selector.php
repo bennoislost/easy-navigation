@@ -52,6 +52,10 @@ class Bennoislost_EasyNavigation_Block_Catalog_Product_Navigation_Template_Selec
             return 'CHILD WITH CHILDREN';
         }
 
+        if ($this->_isChildWithoutChildren()) {
+            return 'CHILD WITHOUT CHILDREN';
+        }
+
         return '';
     }
 
@@ -93,5 +97,13 @@ class Bennoislost_EasyNavigation_Block_Catalog_Product_Navigation_Template_Selec
     private function _isChildWithChildren()
     {
         return $this->_depth > 1 && $this->_children->count();
+    }
+
+    /**
+     * @return bool
+     */
+    private function _isChildWithoutChildren()
+    {
+        return $this->_depth > 1 && (!$this->_children->count());
     }
 }
