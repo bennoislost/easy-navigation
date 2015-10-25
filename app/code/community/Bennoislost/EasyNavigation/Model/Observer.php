@@ -11,6 +11,12 @@ class Bennoislost_EasyNavigation_Model_Observer
         $block = $event->getEvent()->getBlock();
         $block->addCacheTag(Mage_Catalog_Model_Category::CACHE_TAG);
 
-        return;
+        Mage::getModel('bennoislost_easynavigation/catalog_category_navigation_add')
+            ->addCategoriesToMenu(
+                Mage::helper('catalog/category')->getStoreCategories(),
+                $event->getMenu(),
+                $block,
+                true
+            );
     }
 }
