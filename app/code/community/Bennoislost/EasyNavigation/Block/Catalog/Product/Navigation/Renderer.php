@@ -40,20 +40,46 @@ class Bennoislost_EasyNavigation_Block_Catalog_Product_Navigation_Renderer
                 $outermostClassCode = ' class="' . $outermostClass . '" ';
                 $child->setClass($outermostClass);
             }
-            $blockName = ($childLevel == 0) ? 'easy-nav.level-with-children'
-                : 'easy-nav.single-level';
 
-            $block = Mage::app()->getLayout()->getBlock($blockName);
-            $block->setMenu($child);
-            $block->setOutermostClassCode($outermostClassCode);
-            $block->setChildrenWrapClass($childrenWrapClass);
-            $block->setChildLevel($childLevel);
-            $block->setIsFirst($counter == 1);
-            $block->setIsLast($counter == $childrenCount);
-            $html .= $block->toHtml();
+            $blockName = ($childLevel == 0)
+                ? 'bennoislost.easy-navigation.renderer.with-children'
+                : 'bennoislost.easy-navigation.renderer.single';
+
+            $html .= $this->_renderBlockItem(
+                $blockName,
+                $childrenWrapClass,
+                $child,
+                $outermostClassCode
+            );
+
             $counter++;
         }
 
         return $html;
+    }
+
+    /**
+     * @param $blockName
+     * @param $childrenWrapClass
+     * @param $child
+     * @param $outermostClassCode
+     *
+     * @return string
+     */
+    protected function _renderBlockItem(
+        $blockName,
+        $childrenWrapClass,
+        $child,
+        $outermostClassCode
+    ) {
+        $block = Mage::app()->getLayout()->getBlock($blockName);
+        $block->setMenu($child);
+        $block->setOutermostClassCode($outermostClassCode);
+        $block->setChildrenWrapClass($childrenWrapClass);
+        $block->setChildLevel($child->getLevel());
+        $block->setIsFirst($child->getIsFirst());
+        $block->setIsLast($child->getIsLast());
+
+        return $block->toHtml();
     }
 }
