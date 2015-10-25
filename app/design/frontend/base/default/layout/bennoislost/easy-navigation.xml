@@ -6,7 +6,8 @@
                 <alias>catalog.topnav</alias>
             </action>
             <block name="bennoislost.easy-navigation.renderer" type="bennoislost_easynavigation/catalog_product_navigation_renderer" as="bennoislost.easy-nav" template="bennoislost/easy-navigation/root.phtml">
-                <block name="bennoislost.easy-navigation.template.selector" type="bennoislost_easynavigation/catalog_product_navigation_template_selector" as="template-selector"/>
+                <block type="bennoislost_easynavigation/catalog_product_navigation_renderer" name="easy-nav.level-with-children" template="bennoislost/easy-navigation/level-with-children.phtml"/>
+                <block type="bennoislost_easynavigation/catalog_product_navigation_renderer" name="easy-nav.single-level" template="bennoislost/easy-navigation/single-level.phtml"/>
             </block>
         </reference>
     </default>

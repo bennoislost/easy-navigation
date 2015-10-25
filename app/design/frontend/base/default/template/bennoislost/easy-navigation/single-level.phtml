@@ -1,0 +1,7 @@
+<?php /** @var Bennoislost_EasyNavigation_Block_Catalog_Product_Navigation_Renderer $this */ ?>
+<?php $_child = $this->getMenu(); ?>
+<li <?php echo $this->_getRenderedMenuItemAttributes($_child); ?>>
+    <a href="<?php echo $_child->getUrl(); ?>" <?php echo $this->getOutermostClassCode(); ?>>
+        <span><?php echo $this->escapeHtml($_child->getName()); ?></span>
+    </a>
+</li>
