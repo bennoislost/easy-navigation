@@ -11,6 +11,24 @@
                 <class>Bennoislost_EasyNavigation_Block</class>
             </bennoislost_easynavigation>
         </blocks>
+        <models>
+            <bennoislost_easynavigation>
+                <class>Bennoislost_EasyNavigation_Model</class>
+            </bennoislost_easynavigation>
+        </models>
+        <events>
+            <page_block_html_topmenu_gethtml_before>
+                <observers>
+                    <catalog_add_topmenu_items>
+                        <type>disabled</type>
+                    </catalog_add_topmenu_items>
+                    <bennoislost_easynavigation_add_topmenu_items>
+                        <class>bennoislost_easynavigation/observer</class>
+                        <method>addCatalogToTopmenuItems</method>
+                    </bennoislost_easynavigation_add_topmenu_items>
+                </observers>
+            </page_block_html_topmenu_gethtml_before>
+        </events>
     </global>
     <frontend>
         <layout>
