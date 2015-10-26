@@ -73,6 +73,7 @@ class Bennoislost_EasyNavigation_Block_Catalog_Product_Navigation_Renderer
         $outermostClassCode
     ) {
         $block = Mage::app()->getLayout()->getBlock($blockName);
+        $block->setCacheLifetime(null);
         $block->setMenu($child);
         $block->setOutermostClassCode($outermostClassCode);
         $block->setChildrenWrapClass($childrenWrapClass);
