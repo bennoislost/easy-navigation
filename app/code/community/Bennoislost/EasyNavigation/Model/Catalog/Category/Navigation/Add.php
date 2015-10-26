@@ -39,7 +39,8 @@ class Bennoislost_EasyNavigation_Model_Catalog_Category_Navigation_Add
                 'id'        => $nodeId,
                 'url'       => Mage::helper('catalog/category')
                     ->getCategoryUrl($category),
-                'is_active' => $this->_isActiveMenuCategory($category)
+                'is_active' => $this->_isActiveMenuCategory($category),
+                'category_data' => $category->getData()
             );
 
             $categoryNode = new Varien_Data_Tree_Node(
